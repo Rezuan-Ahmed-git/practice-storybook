@@ -1,3 +1,13 @@
+import { ChakraProvider, theme, CSSReset } from '@chakra-ui/react';
+import {addDecorator} from '@storybook/react'
+
+addDecorator((story) => (
+  <ChakraProvider theme={theme}>
+    <CSSReset />
+    {story()}
+  </ChakraProvider>
+));
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
